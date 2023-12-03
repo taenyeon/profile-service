@@ -1,0 +1,12 @@
+http://localhost:8080/api/member/{{username}}
+
+###
+POST http://localhost:8080/api/member
+Content-Type: application/json
+
+{
+  "username": "test@naver.com",
+  "password": "test",
+  "name": "test",
+  "phoneNumber": "01040258753"
+}
