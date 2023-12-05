@@ -6,8 +6,6 @@ import java.time.LocalDateTime
 class CardComponentDto(
     var id: Long,
 
-    var card: CardDto,
-
     var type: CardComponentType,
 
     var x: Int,
