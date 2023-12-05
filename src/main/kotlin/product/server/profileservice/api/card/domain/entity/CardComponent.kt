@@ -14,19 +14,20 @@ class CardComponent(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long?,
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "card_id")
-    var card: Card,
+    var card: Card?,
 
-    var type: CardComponentType,
+    @Enumerated(EnumType.STRING)
+    var type: CardComponentType?,
 
-    var x: Int,
+    var x: Int?,
 
-    var y: Int,
+    var y: Int?,
 
-    var name: String,
+    var name: String?,
 
-    var payload: String,
+    var payload: String?,
 
     @CreationTimestamp
     @DateTimeFormat(pattern = "yyyy-mm-dd HH:mm:ss")

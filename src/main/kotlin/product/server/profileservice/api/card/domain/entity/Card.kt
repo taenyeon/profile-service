@@ -13,11 +13,11 @@ class Card(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long?,
 
-    var userId: Long,
+    var userId: Long?,
 
-    var name: String,
+    var name: String?,
 
-    @OneToMany(mappedBy = "card")
+    @OneToMany(mappedBy = "card", cascade = [CascadeType.ALL])
     var components: MutableList<CardComponent> = mutableListOf<CardComponent>(),
 
     @CreationTimestamp
@@ -32,6 +32,11 @@ class Card(
     fun addComponent(component: CardComponent) {
         this.components.add(component)
         component.card = this
+    }
+
+    fun removeComponent(component: CardComponent) {
+        this.components.remove(component)
+        component.card = null
     }
 
 }

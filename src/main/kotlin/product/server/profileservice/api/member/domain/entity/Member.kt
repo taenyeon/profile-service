@@ -27,11 +27,4 @@ class Member(
     @UpdateTimestamp
     @DateTimeFormat(pattern = "yyyy-mm-dd HH:mm:ss")
     var updatedAt: LocalDateTime? = LocalDateTime.now()
-) {
-
-
-    constructor() : this(
-        null, null, null, null, null, null, null
-    )
-
-}
+)
