@@ -26,8 +26,8 @@ class UserController(
     val log = logger()
 
     @PostMapping("")
-    fun join(@RequestBody addMemberRequest: JoinRequest){
-
+    fun join(@RequestBody joinRequest: JoinRequest): ResponseEntity<Response> {
+        return ResponseCode.SUCCESS.toResponse(userService.join(joinRequest))
     }
 
     @PostMapping("/login")

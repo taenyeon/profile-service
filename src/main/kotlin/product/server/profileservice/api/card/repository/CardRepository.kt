@@ -8,5 +8,5 @@ import java.util.Optional
 
 @Repository
 interface CardRepository : JpaRepository<Card, Long> {
-    fun findByUserId(id:Long):Optional<Card>
+    fun findByUserId(id:Long):List<Card>
 }

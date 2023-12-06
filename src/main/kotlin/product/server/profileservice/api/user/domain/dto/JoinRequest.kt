@@ -1,11 +1,15 @@
 package product.server.profileservice.api.user.domain.dto
 
-data class JoinRequest(
-    var username: String?,
-    var password: String?,
-    var name: String?,
-    var phoneNumber: String?,
-) {
+import jakarta.validation.constraints.NotNull
 
-    constructor() : this(null, null, null, null)
+data class JoinRequest(
+    @NotNull
+    var username: String,
+    @NotNull
+    var password: String,
+    @NotNull
+    var name: String,
+    @NotNull
+    var phoneNumber: String,
+) {
 }
