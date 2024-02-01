@@ -28,6 +28,7 @@ class UserService(
     private val joinRequestMapper: JoinRequestMapper = Mappers.getMapper(JoinRequestMapper::class.java)
 
     fun getUser(): Member {
+
         return user()
     }
 

@@ -20,13 +20,9 @@ class CardDto(
     var components: MutableList<CardComponentDto> = mutableListOf(),
 
     @DateTimeFormat(pattern = "yyyy-mm-dd HH:mm:ss")
-//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd HH:mm:ss")
-//    @JsonDeserialize(using = LocalDateTimeDeserializer::class)
     var createdAt: LocalDateTime? = LocalDateTime.now(),
 
     @DateTimeFormat(pattern = "yyyy-mm-dd HH:mm:ss")
-//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd HH:mm:ss")
-//    @JsonDeserialize(using = LocalDateTimeDeserializer::class)
     var updatedAt: LocalDateTime? = LocalDateTime.now()
 
 ) {

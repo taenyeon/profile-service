@@ -6,12 +6,11 @@ import org.mapstruct.Mapper
 import org.mapstruct.Mapping
 import product.server.profileservice.common.annotation.encrypt.Decrypt
 import product.server.profileservice.common.annotation.encrypt.Encrypt
-import product.server.profileservice.common.annotation.encrypt.PasswordEncrypt
 import product.server.profileservice.common.interfaces.EntityMapper
 import product.server.profileservice.common.util.EncryptUtil
 
 @Mapper(uses = [EncryptUtil::class])
-interface MemberDtoMapper : EntityMapper<Member, MemberResponse> {
+interface MemberMapper : EntityMapper<Member, MemberResponse> {
 
     @Mapping(source = "username", target = "username", qualifiedBy = [Encrypt::class])
     @Mapping(source = "name", target = "name", qualifiedBy = [Encrypt::class])

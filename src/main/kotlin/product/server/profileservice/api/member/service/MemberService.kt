@@ -1,6 +1,6 @@
 package product.server.profileservice.api.member.service
 
-import product.server.profileservice.api.member.domain.mapper.MemberDtoMapper
+import product.server.profileservice.api.member.domain.mapper.MemberMapper
 import product.server.profileservice.api.member.domain.dto.response.MemberResponse
 import product.server.profileservice.api.member.domain.entity.Member
 import product.server.profileservice.api.member.repository.MemberRepository
@@ -18,7 +18,7 @@ class MemberService(
     val log = logger()
 
     // mapStruct
-    private val memberDtoMapper: MemberDtoMapper = Mappers.getMapper(MemberDtoMapper::class.java)
+    private val memberDtoMapper: MemberMapper = Mappers.getMapper(MemberMapper::class.java)
 
 
     // Entity

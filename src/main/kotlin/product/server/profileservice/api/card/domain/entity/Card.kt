@@ -17,9 +17,6 @@ class Card(
 
     var name: String?,
 
-    @OneToMany(mappedBy = "card", cascade = [CascadeType.ALL])
-    var components: MutableList<CardComponent> = mutableListOf<CardComponent>(),
-
     @CreationTimestamp
     @DateTimeFormat(pattern = "yyyy-mm-dd HH:mm:ss")
     var createdAt: LocalDateTime? = LocalDateTime.now(),
@@ -28,15 +25,4 @@ class Card(
     @DateTimeFormat(pattern = "yyyy-mm-dd HH:mm:ss")
     var updatedAt: LocalDateTime? = LocalDateTime.now()
 
-) {
-    fun addComponent(component: CardComponent) {
-        this.components.add(component)
-        component.card = this
-    }
-
-    fun removeComponent(component: CardComponent) {
-        this.components.remove(component)
-        component.card = null
-    }
-
-}
+)
